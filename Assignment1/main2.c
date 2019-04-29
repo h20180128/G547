@@ -99,8 +99,8 @@ for (i =0;i<=2;i++)
 printk(KERN_INFO "Device %s is created\n",devnames[i]);
 }
 
-cdev_init(&c_dev,&fops);
-cdev_add(&c_dev,num,3);
+cdev_init(c_dev,&fops);
+cdev_add(c_dev,num,3);
 printk(KERN_INFO"cdev,fops created\n");
 return 0;
 }
@@ -108,7 +108,7 @@ return 0;
 
 static void firstmod_exit(void)
 {
-	cdev_del(&c_dev);
+	cdev_del(c_dev);
 	int i=0;
 	for(i=0;i<3;i++)
 	device_destroy(cls,MKDEV(MAJOR(num),MINOR(num)+i));
