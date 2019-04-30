@@ -10,7 +10,7 @@ Block Device Driver
 >Check the partition info using sudo fdisk -l /dev/dor
 
 
->we have created 2 logical partions
+>2 logical partions are created
 
 >to check mbr details using sudo hd -n 512 /dev/dor
 
